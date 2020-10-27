@@ -50,10 +50,13 @@ func update_display() -> void:
 func _on_gui_input(event: InputEvent):
 	if event is InputEventMouseButton:
 		if event.pressed and event.button_index == BUTTON_LEFT:
+			#makes a new card, sets it number and color to our own card
 			var newCard = cardScene.instance()
 			newCard.number = card.number
 			newCard.color = card.color
+			#adds it as a child of the gridContainer
 			cardGridContainer.add_child(newCard)
+			#changes the card
 			card = make_new_card()
 			update_display()
 			
