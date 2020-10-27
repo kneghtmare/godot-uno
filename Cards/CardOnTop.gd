@@ -16,6 +16,7 @@ onready var colorRect := $ColorRect
 onready var numberLabel := $NumberLabel
 
 func _ready() -> void:
+	OS.center_window()
 	card.color = color
 	card.number = number
 	update_display()

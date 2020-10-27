@@ -44,7 +44,7 @@ func update_display() -> void:
 		_: #if color is somehow none of the above values, set color to white
 			colorRect.color = Color.white
 			
-	numberLabel.text = str(number)
+	numberLabel.text = str(card.number)
 	
 
 func get_drag_data(_position: Vector2) -> Dictionary:
