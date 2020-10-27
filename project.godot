@@ -12,12 +12,12 @@ _global_script_classes=[ {
 "base": "Resource",
 "class": "Card",
 "language": "GDScript",
-"path": "res://Cards/CardResource.gd"
+"path": "res://Cards/Card.gd"
 }, {
 "base": "CenterContainer",
 "class": "CardDisplay",
 "language": "GDScript",
-"path": "res://Cards/Card.gd"
+"path": "res://Cards/CardDisplay.gd"
 }, {
 "base": "CenterContainer",
 "class": "CardOnTop",
