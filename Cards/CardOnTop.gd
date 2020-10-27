@@ -23,17 +23,14 @@ func _ready() -> void:
 
 
 func update_display() -> void:
-	match card.color:
-		Colors.RED:
-			colorRect.color = Color.red
-		Colors.BLUE:
-			colorRect.color = Color.blue
-		Colors.YELLOW:
-			colorRect.color = Color.yellow
-		Colors.GREEN:
-			colorRect.color = Color.green
-		_: #if color is somehow none of the above values, set color to white
-			colorRect.color = Color.white
+	var color_dictionary := {
+		Colors.RED : Color.red,
+		Colors.BLUE : Color.blue,
+		Colors.YELLOW : Color.yellow,
+		Colors.GREEN : Color.green
+	}
+	
+	colorRect.color = color_dictionary[color]
 	
 	numberLabel.text = str(card.number)
 	
