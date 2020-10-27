@@ -45,7 +45,7 @@ func can_drop_data(_position: Vector2, data) -> bool:
 	return false
 	
 	
-func drop_data(_position: Vector2, data):
+func drop_data(_position: Vector2, data) -> void:
 	card.color = data.card.color
 	card.number = data.card.number
 	update_display()

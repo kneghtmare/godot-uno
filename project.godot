@@ -28,12 +28,18 @@ _global_script_classes=[ {
 "class": "DrawPileCard",
 "language": "GDScript",
 "path": "res://Cards/DrawPileCard.gd"
+}, {
+"base": "Control",
+"class": "GameManager",
+"language": "GDScript",
+"path": "res://General/GameManager.gd"
 } ]
 _global_script_class_icons={
 "Card": "",
 "CardDisplay": "",
 "CardOnTop": "",
-"DrawPileCard": ""
+"DrawPileCard": "",
+"GameManager": ""
 }
 
 [application]
