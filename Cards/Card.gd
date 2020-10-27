@@ -1,5 +1,5 @@
 extends CenterContainer
-class_name Card
+class_name CardDisplay
 
 enum Colors {
 	RED,
