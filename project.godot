@@ -15,6 +15,11 @@ _global_script_classes=[ {
 "path": "res://Cards/Card.gd"
 }, {
 "base": "CenterContainer",
+"class": "CardDisplay",
+"language": "GDScript",
+"path": "res://Cards/CardDisplay.gd"
+}, {
+"base": "CenterContainer",
 "class": "CardOnTop",
 "language": "GDScript",
 "path": "res://Cards/CardOnTop.gd"
@@ -26,6 +31,7 @@ _global_script_classes=[ {
 } ]
 _global_script_class_icons={
 "Card": "",
+"CardDisplay": "",
 "CardOnTop": "",
 "DrawPileCard": ""
 }

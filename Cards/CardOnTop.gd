@@ -10,16 +10,19 @@ enum Colors {
 
 export var number := 0
 export (Colors) var color
+var card := Card.new()
 
 onready var colorRect := $ColorRect
 onready var numberLabel := $NumberLabel
 
 func _ready() -> void:
+	card.color = color
+	card.number = number
 	update_display()
 
 
 func update_display() -> void:
-	match color:
+	match card.color:
 		Colors.RED:
 			colorRect.color = Color.red
 		Colors.BLUE:
@@ -31,15 +34,22 @@ func update_display() -> void:
 		_: #if color is somehow none of the above values, set color to white
 			colorRect.color = Color.white
 	
-	numberLabel.text = str(number)
+	numberLabel.text = str(card.number)
 	
 
 func can_drop_data(_position: Vector2, data) -> bool:
-	return data is Dictionary and data.has("number")
+	var is_data_valid: bool = data is Dictionary and data.has("card")
+	if is_data_valid:
+		#only can drop data if the color or number matches
+		return data.card.color == card.color or data.card.number == card.number
+		
+	return false
 	
 	
-func drop_data(position: Vector2, data):
-	if data.color_rect_color == colorRect.color or data.number == number:
-		color = data.color
+func drop_data(_position: Vector2, data):
+	if data.card.color == card.color or data.card.number == card.number:
+		card.color = data.card.color
+		card.number = data.card.number
 		update_display()
-		data.card.queue_free()
+		data.card_display.queue_free()
+	
