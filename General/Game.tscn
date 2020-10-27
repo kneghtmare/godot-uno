@@ -7,17 +7,16 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="GridContainer" type="GridContainer" parent="."]
+[node name="Cards" type="Control" parent="."]
 margin_left = 98.7781
 margin_top = 419.14
 margin_right = 162.778
 margin_bottom = 483.14
-columns = 3
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Card" type="CenterContainer" parent="GridContainer"]
+[node name="Card" type="CenterContainer" parent="Cards"]
 margin_right = 64.0
 margin_bottom = 64.0
 script = ExtResource( 1 )
@@ -26,14 +25,36 @@ __meta__ = {
 }
 number = 4
 
-[node name="ColorRect" type="ColorRect" parent="GridContainer/Card"]
+[node name="ColorRect" type="ColorRect" parent="Cards/Card"]
 margin_right = 64.0
 margin_bottom = 64.0
 rect_min_size = Vector2( 64, 64 )
 mouse_filter = 2
 color = Color( 0, 0, 0, 1 )
 
-[node name="NumberLabel" type="Label" parent="GridContainer/Card"]
+[node name="NumberLabel" type="Label" parent="Cards/Card"]
+margin_left = 28.0
+margin_top = 25.0
+margin_right = 36.0
+margin_bottom = 39.0
+text = "1"
+
+[node name="Card2" type="CenterContainer" parent="Cards"]
+margin_left = 68.0
+margin_right = 132.0
+margin_bottom = 64.0
+script = ExtResource( 1 )
+number = 6
+color = 3
+
+[node name="ColorRect" type="ColorRect" parent="Cards/Card2"]
+margin_right = 64.0
+margin_bottom = 64.0
+rect_min_size = Vector2( 64, 64 )
+mouse_filter = 2
+color = Color( 0, 0, 0, 1 )
+
+[node name="NumberLabel" type="Label" parent="Cards/Card2"]
 margin_left = 28.0
 margin_top = 25.0
 margin_right = 36.0

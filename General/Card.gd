@@ -21,6 +21,13 @@ func _ready() -> void:
 	display_correct_color()
 	numberLabel.text = str(number)
 
+
+func _process(delta: float) -> void:
+	if is_being_dragged:
+		rect_position = get_global_mouse_position()
+
+
+#displays proper color that was exported
 func display_correct_color() -> void:
 	match color:
 		Colors.RED:
@@ -31,13 +38,8 @@ func display_correct_color() -> void:
 			colorRect.color = Color.yellow
 		Colors.GREEN:
 			colorRect.color = Color.green
-		_:
+		_: #if color is somehow none of the above values, set color to white
 			colorRect.color = Color.white
-
-
-func _process(delta: float) -> void:
-	if is_being_dragged:
-		rect_position = get_global_mouse_position()
 
 
 func _on_gui_input(event: InputEvent) -> void:
