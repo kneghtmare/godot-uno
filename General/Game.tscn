@@ -1,0 +1,27 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://General/Card.gd" type="Script" id=1]
+
+[node name="Game" type="Node2D"]
+
+[node name="Card" type="Control" parent="."]
+margin_left = 253.984
+margin_top = 125.405
+margin_right = 253.984
+margin_bottom = 125.405
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Color" type="ColorRect" parent="Card"]
+margin_right = 40.0
+margin_bottom = 40.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Number" type="Label" parent="Card"]
+margin_right = 40.0
+margin_bottom = 14.0
+text = "1"
