@@ -34,7 +34,7 @@ func update_display() -> void:
 		Colors.GREEN : Color.green
 	}
 	
-	colorRect.color = color_dictionary[color]
+	colorRect.color = color_dictionary[card.color]
 			
 	numberLabel.text = str(card.number)
 	
