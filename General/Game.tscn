@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=2]
+[gd_scene load_steps=3 format=2]
 
 [ext_resource path="res://General/Card.gd" type="Script" id=1]
+[ext_resource path="res://General/CardOnTop.gd" type="Script" id=2]
 
 [node name="Game" type="Control"]
 anchor_right = 1.0
@@ -19,12 +20,13 @@ __meta__ = {
 }
 
 [node name="Card" type="CenterContainer" parent="Control"]
-margin_left = 98.7781
-margin_top = 419.14
-margin_right = 162.778
-margin_bottom = 483.14
+margin_left = 213.281
+margin_top = 360.24
+margin_right = 277.281
+margin_bottom = 424.24
 script = ExtResource( 1 )
 __meta__ = {
+"_edit_group_": true,
 "_edit_use_anchors_": false
 }
 number = 4
@@ -44,12 +46,13 @@ margin_bottom = 39.0
 text = "1"
 
 [node name="Card2" type="CenterContainer" parent="Control"]
-margin_left = 166.778
-margin_top = 419.14
-margin_right = 230.778
-margin_bottom = 483.14
+margin_left = 424.944
+margin_top = 446.079
+margin_right = 488.944
+margin_bottom = 510.079
 script = ExtResource( 1 )
 __meta__ = {
+"_edit_group_": true,
 "_edit_use_anchors_": false
 }
 number = 6
@@ -63,6 +66,31 @@ mouse_filter = 2
 color = Color( 0, 0, 0, 1 )
 
 [node name="NumberLabel" type="Label" parent="Control/Card2"]
+margin_left = 28.0
+margin_top = 25.0
+margin_right = 36.0
+margin_bottom = 39.0
+text = "1"
+
+[node name="CardOnTop" type="CenterContainer" parent="."]
+margin_left = 421.77
+margin_top = 176.221
+margin_right = 485.77
+margin_bottom = 240.221
+script = ExtResource( 2 )
+__meta__ = {
+"_edit_group_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="ColorRect" type="ColorRect" parent="CardOnTop"]
+margin_right = 64.0
+margin_bottom = 64.0
+rect_min_size = Vector2( 64, 64 )
+mouse_filter = 2
+color = Color( 0, 0, 0, 1 )
+
+[node name="NumberLabel" type="Label" parent="CardOnTop"]
 margin_left = 28.0
 margin_top = 25.0
 margin_right = 36.0
