@@ -25,11 +25,6 @@ func _ready() -> void:
 	update_display()
 
 
-func _process(delta: float) -> void:
-	if is_being_dragged:
-		rect_position = get_global_mouse_position()
-	
-
 #displays proper color that was exported
 func update_display() -> void:
 	var color_dictionary := {

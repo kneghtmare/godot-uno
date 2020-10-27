@@ -30,7 +30,7 @@ func update_display() -> void:
 		Colors.GREEN : Color.green
 	}
 	
-	colorRect.color = color_dictionary[color]
+	colorRect.color = color_dictionary[card.color]
 	
 	numberLabel.text = str(card.number)
 	
@@ -39,15 +39,15 @@ func can_drop_data(_position: Vector2, data) -> bool:
 	var is_data_valid: bool = data is Dictionary and data.has("card")
 	if is_data_valid:
 		#only can drop data if the color or number matches
-		return data.card.color == card.color or data.card.number == card.number
+		if data.card.color == card.color or data.card.number == card.number:
+			return true
 		
 	return false
 	
 	
 func drop_data(_position: Vector2, data):
-	if data.card.color == card.color or data.card.number == card.number:
-		card.color = data.card.color
-		card.number = data.card.number
-		update_display()
-		data.card_display.queue_free()
-	
+	card.color = data.card.color
+	card.number = data.card.number
+	update_display()
+	data.card_display.queue_free()
+
