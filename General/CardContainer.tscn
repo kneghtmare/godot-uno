@@ -1,30 +1,13 @@
-[gd_scene load_steps=2 format=2]
-
-[ext_resource path="res://Cards/Card.tscn" type="PackedScene" id=2]
+[gd_scene format=2]
 
 [node name="CardContainer" type="GridContainer"]
 anchor_right = 1.0
 anchor_bottom = 1.0
-margin_left = 11.9433
+margin_left = 23.257
 margin_top = 495.636
-margin_right = -34.0567
+margin_right = -22.743
 margin_bottom = -27.3638
 columns = 10
 __meta__ = {
 "_edit_use_anchors_": false
 }
-
-[node name="Card" parent="." instance=ExtResource( 2 )]
-number = 3
-
-[node name="Card2" parent="." instance=ExtResource( 2 )]
-margin_left = 68.0
-margin_right = 132.0
-number = 5
-color = 3
-
-[node name="Card3" parent="." instance=ExtResource( 2 )]
-margin_left = 136.0
-margin_right = 200.0
-number = 5
-color = 3

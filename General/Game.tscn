@@ -1,9 +1,10 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://Cards/DrawPileCard.gd" type="Script" id=1]
 [ext_resource path="res://Cards/CardOnTop.gd" type="Script" id=2]
-[ext_resource path="res://General/CardContainer.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Cards/Card.tscn" type="PackedScene" id=3]
 [ext_resource path="res://General/GameManager.gd" type="Script" id=4]
+[ext_resource path="res://General/CardContainer.tscn" type="PackedScene" id=5]
 
 [node name="Game" type="Control"]
 anchor_right = 1.0
@@ -14,13 +15,37 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Player1CardContainer" parent="." instance=ExtResource( 3 )]
+[node name="Player1CardContainer" parent="." instance=ExtResource( 5 )]
+margin_left = 77.9605
+margin_top = 478.987
+margin_right = 31.9604
+margin_bottom = -44.0126
 
-[node name="Player2CardContainer" parent="." instance=ExtResource( 3 )]
-margin_left = 34.5706
-margin_top = 9.14648
-margin_right = -11.4294
-margin_bottom = -513.853
+[node name="Card" parent="Player1CardContainer" instance=ExtResource( 3 )]
+
+[node name="Card2" parent="Player1CardContainer" instance=ExtResource( 3 )]
+margin_left = 68.0
+margin_right = 132.0
+
+[node name="Card3" parent="Player1CardContainer" instance=ExtResource( 3 )]
+margin_left = 136.0
+margin_right = 200.0
+
+[node name="Player2CardContainer" parent="." instance=ExtResource( 5 )]
+margin_left = 66.0685
+margin_top = 27.0885
+margin_right = 20.0685
+margin_bottom = -495.911
+
+[node name="Card" parent="Player2CardContainer" instance=ExtResource( 3 )]
+
+[node name="Card2" parent="Player2CardContainer" instance=ExtResource( 3 )]
+margin_left = 68.0
+margin_right = 132.0
+
+[node name="Card3" parent="Player2CardContainer" instance=ExtResource( 3 )]
+margin_left = 136.0
+margin_right = 200.0
 
 [node name="CardOnTop" type="CenterContainer" parent="."]
 margin_left = 421.77
@@ -60,7 +85,6 @@ __meta__ = {
 "_edit_group_": true,
 "_edit_use_anchors_": false
 }
-player1_card_container_path = NodePath("../Player1CardContainer")
 game_manager_path = NodePath("..")
 
 [node name="ColorRect" type="ColorRect" parent="DrawPileCard"]

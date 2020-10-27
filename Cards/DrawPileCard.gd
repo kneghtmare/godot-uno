@@ -12,7 +12,7 @@ signal switch_turn
 
 export var number := 0
 export (Colors) var color
-export var player1_card_container_path: NodePath
+
 export var game_manager_path: NodePath
 
 #preloads
@@ -25,7 +25,6 @@ var card := Card.new()
 
 onready var colorRect := $ColorRect
 onready var numberLabel := $NumberLabel
-onready var player1CardContainer = get_node(player1_card_container_path)
 onready var gameManager: GameManager = get_node(game_manager_path)
 
 
