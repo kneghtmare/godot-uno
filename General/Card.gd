@@ -44,7 +44,9 @@ func display_correct_color() -> void:
 func get_drag_data(_position: Vector2) -> Dictionary:
 	var data := {}
 	data.number = number
+	data.color_rect_color = colorRect.color
 	data.color = color
+	data.card = self
 	var dragPreview := ColorRect.new()
 	dragPreview.rect_size = colorRect.rect_size
 	dragPreview.color = colorRect.color

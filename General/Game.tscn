@@ -82,6 +82,8 @@ __meta__ = {
 "_edit_group_": true,
 "_edit_use_anchors_": false
 }
+number = 4
+color = 1
 
 [node name="ColorRect" type="ColorRect" parent="CardOnTop"]
 margin_right = 64.0
