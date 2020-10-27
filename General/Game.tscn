@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=4 format=2]
 
-[ext_resource path="res://General/Card.gd" type="Script" id=1]
-[ext_resource path="res://General/CardOnTop.gd" type="Script" id=2]
+[ext_resource path="res://Cards/DrawPileCard.gd" type="Script" id=1]
+[ext_resource path="res://Cards/CardOnTop.gd" type="Script" id=2]
+[ext_resource path="res://Cards/Card.tscn" type="PackedScene" id=3]
 
 [node name="Game" type="Control"]
 anchor_right = 1.0
@@ -11,66 +12,32 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Control" type="Control" parent="."]
+[node name="GridContainer" type="GridContainer" parent="."]
 anchor_right = 1.0
 anchor_bottom = 1.0
-mouse_filter = 1
+margin_left = 354.624
+margin_top = 487.541
+margin_right = -174.376
+margin_bottom = -35.459
+columns = 4
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Card" type="CenterContainer" parent="Control"]
-margin_left = 213.281
-margin_top = 360.24
-margin_right = 277.281
-margin_bottom = 424.24
-script = ExtResource( 1 )
-__meta__ = {
-"_edit_group_": true,
-"_edit_use_anchors_": false
-}
-number = 4
+[node name="Card" parent="GridContainer" instance=ExtResource( 3 )]
+number = 3
 
-[node name="ColorRect" type="ColorRect" parent="Control/Card"]
-margin_right = 64.0
-margin_bottom = 64.0
-rect_min_size = Vector2( 64, 64 )
-mouse_filter = 2
-color = Color( 0, 0, 0, 1 )
-
-[node name="NumberLabel" type="Label" parent="Control/Card"]
-margin_left = 28.0
-margin_top = 25.0
-margin_right = 36.0
-margin_bottom = 39.0
-text = "1"
-
-[node name="Card2" type="CenterContainer" parent="Control"]
-margin_left = 424.944
-margin_top = 446.079
-margin_right = 488.944
-margin_bottom = 510.079
-script = ExtResource( 1 )
-__meta__ = {
-"_edit_group_": true,
-"_edit_use_anchors_": false
-}
-number = 6
+[node name="Card2" parent="GridContainer" instance=ExtResource( 3 )]
+margin_left = 68.0
+margin_right = 132.0
+number = 5
 color = 3
 
-[node name="ColorRect" type="ColorRect" parent="Control/Card2"]
-margin_right = 64.0
-margin_bottom = 64.0
-rect_min_size = Vector2( 64, 64 )
-mouse_filter = 2
-color = Color( 0, 0, 0, 1 )
-
-[node name="NumberLabel" type="Label" parent="Control/Card2"]
-margin_left = 28.0
-margin_top = 25.0
-margin_right = 36.0
-margin_bottom = 39.0
-text = "1"
+[node name="Card3" parent="GridContainer" instance=ExtResource( 3 )]
+margin_left = 136.0
+margin_right = 200.0
+number = 5
+color = 3
 
 [node name="CardOnTop" type="CenterContainer" parent="."]
 margin_left = 421.77
@@ -82,7 +49,7 @@ __meta__ = {
 "_edit_group_": true,
 "_edit_use_anchors_": false
 }
-number = 4
+number = 5
 color = 1
 
 [node name="ColorRect" type="ColorRect" parent="CardOnTop"]
@@ -97,4 +64,31 @@ margin_left = 28.0
 margin_top = 25.0
 margin_right = 36.0
 margin_bottom = 39.0
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "1"
+
+[node name="DrawPileCard" type="CenterContainer" parent="."]
+margin_left = 724.964
+margin_top = 176.221
+margin_right = 788.964
+margin_bottom = 240.221
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_group_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="ColorRect" type="ColorRect" parent="DrawPileCard"]
+margin_right = 64.0
+margin_bottom = 64.0
+rect_min_size = Vector2( 64, 64 )
+mouse_filter = 2
+color = Color( 0, 0, 0, 1 )
+
+[node name="NumberLabel" type="Label" parent="DrawPileCard"]
+margin_left = 28.0
+margin_top = 25.0
+margin_right = 36.0
+margin_bottom = 39.0
+custom_colors/font_color = Color( 0, 0, 0, 1 )
 text = "1"

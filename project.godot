@@ -12,16 +12,22 @@ _global_script_classes=[ {
 "base": "CenterContainer",
 "class": "Card",
 "language": "GDScript",
-"path": "res://General/Card.gd"
+"path": "res://Cards/Card.gd"
 }, {
 "base": "CenterContainer",
 "class": "CardOnTop",
 "language": "GDScript",
-"path": "res://General/CardOnTop.gd"
+"path": "res://Cards/CardOnTop.gd"
+}, {
+"base": "CenterContainer",
+"class": "DrawPileCard",
+"language": "GDScript",
+"path": "res://Cards/DrawPileCard.gd"
 } ]
 _global_script_class_icons={
 "Card": "",
-"CardOnTop": ""
+"CardOnTop": "",
+"DrawPileCard": ""
 }
 
 [application]
