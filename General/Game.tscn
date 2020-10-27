@@ -2,26 +2,40 @@
 
 [ext_resource path="res://General/Card.gd" type="Script" id=1]
 
-[node name="Game" type="Node2D"]
-
-[node name="Card" type="CenterContainer" parent="."]
-script = ExtResource( 1 )
+[node name="Game" type="Control"]
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="ColorRect" type="ColorRect" parent="Card"]
-margin_left = 122.0
-margin_top = 199.0
-margin_right = 186.0
-margin_bottom = 263.0
+[node name="GridContainer" type="GridContainer" parent="."]
+margin_left = 98.7781
+margin_top = 419.14
+margin_right = 162.778
+margin_bottom = 483.14
+columns = 3
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Card" type="CenterContainer" parent="GridContainer"]
+margin_right = 64.0
+margin_bottom = 64.0
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+number = 4
+
+[node name="ColorRect" type="ColorRect" parent="GridContainer/Card"]
+margin_right = 64.0
+margin_bottom = 64.0
 rect_min_size = Vector2( 64, 64 )
 mouse_filter = 2
 color = Color( 0, 0, 0, 1 )
 
-[node name="Number" type="Label" parent="Card"]
-margin_left = 150.0
-margin_top = 224.0
-margin_right = 158.0
-margin_bottom = 238.0
+[node name="NumberLabel" type="Label" parent="GridContainer/Card"]
+margin_left = 28.0
+margin_top = 25.0
+margin_right = 36.0
+margin_bottom = 39.0
 text = "1"
