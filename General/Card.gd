@@ -17,7 +17,6 @@ onready var numberLabel: Label = $NumberLabel
 
 
 func _ready() -> void:
-	connect("gui_input", self, "_on_gui_input")
 	display_correct_color()
 	numberLabel.text = str(number)
 
@@ -42,9 +41,12 @@ func display_correct_color() -> void:
 			colorRect.color = Color.white
 
 
-func _on_gui_input(event: InputEvent) -> void:
-	if event.is_action_pressed("drag"):
-		is_being_dragged = true
-		
-	if event.is_action_released("drag"):
-		is_being_dragged = false
+func get_drag_data(_position: Vector2) -> Dictionary:
+	var data := {}
+	data.number = number
+	data.color = color
+	var dragPreview := ColorRect.new()
+	dragPreview.rect_size = colorRect.rect_size
+	dragPreview.color = colorRect.color
+	set_drag_preview(dragPreview)
+	return data
