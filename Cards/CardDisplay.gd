@@ -8,6 +8,7 @@ enum Colors {
 	BLUE
 }
 
+
 export var number := 0
 export (Colors) var color
 
@@ -16,6 +17,7 @@ var is_being_dragged := false
 
 onready var colorRect: ColorRect = $ColorRect
 onready var numberLabel: Label = $NumberLabel
+onready var gameManager: GameManager = $"/root/Game"
 
 
 func _ready() -> void:
@@ -24,6 +26,15 @@ func _ready() -> void:
 	
 	update_display()
 
+
+func can_play() -> bool:
+	if "Player1" in get_parent().name:
+		return gameManager.is_player1s_turn
+	elif "Player2" in get_parent().name:
+		return not gameManager.is_player1s_turn
+		
+	return false
+	
 
 #displays proper color that was exported
 func update_display() -> void:
@@ -40,11 +51,14 @@ func update_display() -> void:
 	
 
 func get_drag_data(_position: Vector2) -> Dictionary:
-	var data := {}
-	data.card_display = self
-	data.card = card
-	var dragPreview := ColorRect.new()
-	dragPreview.rect_size = colorRect.rect_size
-	dragPreview.color = colorRect.color
-	set_drag_preview(dragPreview)
-	return data
+	if can_play():
+		var data := {}
+		data.card_display = self
+		data.card = card
+		var dragPreview := ColorRect.new()
+		dragPreview.rect_size = colorRect.rect_size
+		dragPreview.color = colorRect.color
+		set_drag_preview(dragPreview)
+		return data
+	
+	return {}

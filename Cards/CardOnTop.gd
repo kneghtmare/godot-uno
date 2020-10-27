@@ -8,8 +8,11 @@ enum Colors {
 	BLUE
 }
 
+signal switch_turn
+
 export var number := 0
 export (Colors) var color
+
 var card := Card.new()
 
 onready var colorRect := $ColorRect
@@ -50,4 +53,4 @@ func drop_data(_position: Vector2, data) -> void:
 	card.number = data.card.number
 	update_display()
 	data.card_display.queue_free()
-
+	emit_signal("switch_turn")

@@ -77,4 +77,5 @@ margin_right = 36.0
 margin_bottom = 39.0
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 text = "1"
+[connection signal="switch_turn" from="CardOnTop" to="." method="switch_turn"]
 [connection signal="switch_turn" from="DrawPileCard" to="." method="switch_turn"]
