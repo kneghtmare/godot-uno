@@ -8,9 +8,12 @@ enum Colors {
 	BLUE
 }
 
+signal switch_turn
+
 export var number := 0
 export (Colors) var color
-export var card_grid_container_path: NodePath
+export var player1_card_container_path: NodePath
+export var game_manager_path: NodePath
 
 #preloads
 var cardScene := preload("res://Cards/Card.tscn")
@@ -22,7 +25,8 @@ var card := Card.new()
 
 onready var colorRect := $ColorRect
 onready var numberLabel := $NumberLabel
-onready var cardGridContainer = get_node(card_grid_container_path)
+onready var player1CardContainer = get_node(player1_card_container_path)
+onready var gameManager: GameManager = get_node(game_manager_path)
 
 
 func _ready() -> void:
@@ -52,16 +56,17 @@ func _on_gui_input(event: InputEvent):
 			newCard.number = card.number
 			newCard.color = card.color
 			#adds it as a child of the gridContainer
-			cardGridContainer.add_child(newCard)
+			gameManager.get_turn_card_container().add_child(newCard)
+			emit_signal("switch_turn")
 			#changes the card
 			card = make_new_card()
 			update_display()
 			
 
 func make_new_card() -> Card:
-	var card = Card.new()
+	var card := Card.new()
 	var random_color = available_colors[randi() % available_colors.size()]
-	var random_number = available_numbers[randi() % available_numbers.size()]
+	var random_number: int = available_numbers[randi() % available_numbers.size()]
 	
 	card.color = random_color
 	card.number = random_number
